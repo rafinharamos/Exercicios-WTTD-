@@ -38,6 +38,7 @@ print_words() and print_top().
 """
 
 import sys
+import operator
 
 
 # +++your code here+++
@@ -47,6 +48,32 @@ import sys
 # Then print_words() and print_top() can just call the utility function.
 
 ###
+
+def read_doc(filename):
+    doc = open(filename)
+    text = (doc.read().lower()).split()
+    doc.close()
+    return text
+
+def dictionary(filename):
+    text_dict = {}
+    words = read_doc(filename)
+    for word in words:
+        if word in text_dict:
+            text_dict[word] += 1
+        else:
+            text_dict[word] = 0
+    return text_dict
+
+def print_words(filename):
+    text_dict = dictionary(filename)
+    sorted_dict = sorted(text_dict.items())
+    print(sorted_dict)
+
+def print_top(filename):
+    text_dict = dictionary(filename)
+    for w in sorted(text_dict, key=text_dict.get, reverse=True):
+        print(w, text_dict[w])
 
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
