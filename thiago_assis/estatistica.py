@@ -34,4 +34,4 @@ def sequence(size):
     print('A média extraída dos valores da Lista é: {}'.format(sum(lista)/len(lista)))
 
     return lista
-
+    
