@@ -1,0 +1,7 @@
+.env
+.vscode
+.wttd
+*.sqlite3
+*pyc
+__pychace__
+staticfiles/
