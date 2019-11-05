@@ -4,9 +4,9 @@ import unittest
 def fib(n):
     if n == 0:
         resultado = 0
-    if n == 1 or n == 2:
+    if n == 1:
         resultado = 1
-    elif n > 2:
+    elif n > 1:
         resultado = fib(n - 1) + fib(n - 2)
     return resultado
 
