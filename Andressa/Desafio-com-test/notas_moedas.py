@@ -16,23 +16,23 @@ Obs: Utilize ponto (.) para separar a parte decimal.
 
 """
 
-
+montante = float(input("Digite o valor para saber a quantidade respectiva de notas e moedas: "))
 cedulas = [100, 50, 20, 10, 5, 2]
 moedas = [1, 0.50, 0.25, 0.10, 0.05, 0.01]
 
 print("Notas:")
-montante = float(input("Digite o valor para saber a quantidade respectiva de notas e moedas: "))
+
 for nota in cedulas:
     qtd_nota = int(montante / nota)
-print("{} nota(s) de R$ {:.2f}".format(qtd_nota, nota))
-montante -= qtd_nota * nota
+    print("{} nota(s) de R$ {:.2f}".format(qtd_nota, nota))
+    montante -= qtd_nota * nota
 
 print("Moedas")
 
 for moeda in moedas:
     qtd_moeda = int(montante / moeda)
-print("{} moeda(s) de R$ {:.2f}".format(qtd_moeda, moeda))
-montante -= qtd_moeda * moeda
+    print("{} moeda(s) de R$ {:.2f}".format(qtd_moeda, moeda))
+    montante -= qtd_moeda * moeda
 
 assert moeda >= 0.01 < 1
 assert nota >= 2 < 100
